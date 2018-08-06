@@ -69,10 +69,10 @@ public class WalletServiceImpl implements IWalletService{
 			wallet.setBalance(wallet.getBalance().add(credit));
 			customer.setWallet(wallet);
 			Transactions transaction = new Transactions();
-			transaaction.setDate(Date.valueOf(LocalDate.now()));
+			transaction.setDate(Date.valueOf(LocalDate.now()));
 			transaction.setWallet(wallet);
-			transaction.settransactionType("deposit");
-			transaction.setTransactionType(credit);
+			transaction.setTransactionType("deposit");
+			transaction.setAmt(credit);
 			transaction.setAmtType("credit");
 			List<Transactions> transactionList=new ArrayList<Transactions>();
 			transactionList.add(transaction);
@@ -107,10 +107,10 @@ public class WalletServiceImpl implements IWalletService{
 				wallet.setBalance(wallet.getBalance().subtract(debit));
 				customer.setWallet(wallet);
 				Transactions transaction = new Transactions();
-			transaaction.setDate(Date.valueOf(LocalDate.now()));
+			transaction.setDate(Date.valueOf(LocalDate.now()));
 			transaction.setWallet(wallet);
-			transaction.settransactionType("withdraw");
-			transaction.setTransactionType(debit);
+			transaction.setTransactionType("withdraw");
+			transaction.setAmt(debit);
 			transaction.setAmtType("debit");
 				List<Transactions> transactionList=new ArrayList<Transactions>();
 				transactionList.add(transaction);
