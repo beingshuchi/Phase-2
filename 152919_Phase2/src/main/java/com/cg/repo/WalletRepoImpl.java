@@ -81,9 +81,11 @@ public class WalletRepoImpl implements IWalletRepo{
 			stat.setBigDecimal(3, customer.getWallet().getBalance());
 			status=stat.execute();
 			
-			PreparedStatement stat1 = con.prepareStatement("insert into Deposit values(?,?)");
+			PreparedStatement stat1 = con.prepareStatement("insert into Transactions values(?,?,?,?)");
 			stat1.setDate(1, Date.valueOf(LocalDate.now()));;
 			stat1.setBigDecimal(2, customer.getWallet().getBalance());
+			stat1.setString(3,"deposit");
+			stat1.setString(3,"credit");
 			status=stat.execute();
 		} 
 		catch (SQLException e) {
