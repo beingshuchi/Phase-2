@@ -10,8 +10,6 @@ import java.util.List;
 public class Transactions {
 	private int id=(int) Math.random()*100;
 	private Wallet wallet;
-	private Deposit deposit;
-	private Withdraw withdraw;
 	
 	
 	public Wallet getWallet() {
@@ -20,12 +18,6 @@ public class Transactions {
 	public void setWallet(Wallet wallet) {
 		this.wallet = wallet;
 	}
-	public Deposit getDeposit() {
-		return deposit;
-	}
-	public void setDeposit(Deposit deposit) {
-		this.deposit = deposit;
-	}
 	
 	
 	public int getId() {
@@ -33,17 +25,12 @@ public class Transactions {
 	}
 	
 	
-	public Withdraw getWithdraw() {
-		return withdraw;
-	}
-	public void setWithdraw(Withdraw withdraw) {
-		this.withdraw = withdraw;
-	}
+	
 	
 	
 	@Override
 	public String toString() {
-		return "Transactions [id=" + id + ", wallet=" + wallet + ", deposit=" + deposit + ", withdraw=" + withdraw
+		return "Transactions [id=" + id + ", wallet=" + wallet 
 				+ "]";
 	}
 	public Transactions() {
